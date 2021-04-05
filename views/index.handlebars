@@ -1,6 +1,6 @@
 <h1>Burgers</h1>
 
-<h2>eaten</h2>
+<h2>Burger</h2>
 
 <ul>
   {{#each burgers}}
@@ -10,7 +10,7 @@
   {{/each}}
 </ul>
 
-<h2>burgers</h2>
+<h2>Eaten</h2>
 
 <ul>
   {{#each burgers}}
@@ -25,14 +25,10 @@
 
   <div class="form-group">
     <label for="ca">burger Name:</label>
-    <input type="text" id="ca" name="name">
+    <input type="text" id="burger" name="name">
   </div>
 
-  {{!-- <div class="form-group">
-    <label for="sleepy">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" id="sleepy" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0" id="awake"> Awake
-  </div> --}}
+
 
   <button type="submit">Add burger</button>
 </form>

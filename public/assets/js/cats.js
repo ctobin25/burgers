@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           sleepy: neweaten,
         };
 
-        fetch(`/api/cats/${id}`, {
+        fetch(`/api/burgers/${id}`, {
           method: 'PUT',
           headers: {
             Accept: 'application/json',
@@ -43,20 +43,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   // CREATE
-  const createCatBtn = document.getElementById('create-form');
+  const createBurgerBtn = document.getElementById('create-form');
 
-  if (createCatBtn) {
-    createCatBtn.addEventListener('submit', (e) => {
+  if (createBurgerBtn) {
+    createBurgerBtn.addEventListener('submit', (e) => {
       e.preventDefault();
 
       // Grabs the value of the textarea that goes by the name, "quote"
-      const newCat = {
-        name: document.getElementById('ca').value.trim(),
-        sleepy: document.getElementById('sleepy').checked,
+      const newBurger = {
+        name: document.getElementById('burger').value.trim(),
       };
 
       // Send POST request to create a new quote
-      fetch('/api/cats', {
+      fetch('/api/burgers', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -64,7 +63,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         },
 
         // make sure to serialize the JSON body
-        body: JSON.stringify(newCat),
+        body: JSON.stringify(newBurger),
       }).then(() => {
         // Empty the form
         document.getElementById('ca').value = '';
@@ -85,7 +84,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const id = e.target.getAttribute('data-id');
 
       // Send the delete request
-      fetch(`/api/cats/${id}`, {
+      fetch(`/api/burgers/${id}`, {
         method: 'DELETE',
       }).then((res) => {
         console.log(res);

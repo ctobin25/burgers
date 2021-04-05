@@ -46,24 +46,19 @@ const orm = {
       cb(result);
     });
   },
-  create(table, cols, vals, cb) {
-    let queryString = `INSERT INTO ${table}`;
+  create(vals, cb) {
 
-    queryString += ' (';
-    queryString += cols.toString();
-    queryString += ') ';
-    queryString += 'VALUES (';
-    queryString += printQuestionMarks(vals.length);
-    queryString += ') ';
-
-    console.log(queryString);
+    let queryString = `INSERT INTO burgers (name) values (?)`;
 
     connection.query(queryString, vals, (err, result) => {
       if (err) {
         throw err;
       }
 
+
       cb(result);
+
+
     });
   },
   // An example of objColVals would be {name: panther, sleepy: true}
