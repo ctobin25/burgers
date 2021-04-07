@@ -31,7 +31,7 @@ router.put('/api/burgers/:id', (req, res) => {
 
   burgers.update(
     {
-      sleepy: req.body.sleepy,
+      eaten: req.body.eaten,
     },
     condition,
     (result) => {

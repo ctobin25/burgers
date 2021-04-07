@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const neweaten = e.target.getAttribute('data-neweaten');
 
         const neweatenState = {
-          sleepy: neweaten,
+          eaten: neweaten,
         };
 
         fetch(`/api/burgers/${id}`, {
@@ -66,10 +66,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         body: JSON.stringify(newBurger),
       }).then(() => {
         // Empty the form
-        document.getElementById('ca').value = '';
+        document.getElementById('burger').value = '';
 
         // Reload the page so the user can see the new quote
-        console.log('Created a new cat!');
+        console.log('Created a new burger!');
         location.reload();
       });
     });
