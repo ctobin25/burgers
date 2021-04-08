@@ -67,13 +67,6 @@ const orm = {
     let queryString = `UPDATE ${table} SET eaten = ${objColVals.eaten} WHERE ${condition} ` ;
 
 
-
-
-    // queryString += ' SET ';
-    // queryString += objToSql(objColVals);
-    // queryString += ' WHERE ';
-    // queryString += condition;
-
     console.log(queryString);
     connection.query(queryString, (err, result) => {
       if (err) {
@@ -84,9 +77,8 @@ const orm = {
     });
   },
   delete(table, condition, cb) {
-    let queryString = `DELETE FROM ${table}`;
-    queryString += ' WHERE ';
-    queryString += condition;
+    let queryString = `DELETE FROM ${table} WHERE ${condition}`;
+  console.log("where is",queryString)
 
     connection.query(queryString, (err, result) => {
       if (err) {

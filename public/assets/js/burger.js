@@ -76,10 +76,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   // DELETE
-  const deleteCatBtns = document.querySelectorAll('.delete-burger');
+  const deleteBurgerBtns = document.querySelectorAll('.delete-burger');
 
   // Set up the event listeners for each delete button
-  deleteCatBtns.forEach((button) => {
+  deleteBurgerBtns.forEach((button) => {
     button.addEventListener('click', (e) => {
       const id = e.target.getAttribute('data-id');
 
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         method: 'DELETE',
       }).then((res) => {
         console.log(res);
-        console.log(`Deleted cat: ${id}`);
+        console.log(`Deleted burger: ${id}`);
 
         // Reload the page
         location.reload();
